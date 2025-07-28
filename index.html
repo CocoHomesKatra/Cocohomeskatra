@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coco Homes Katra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f5f0;
+      color: #2f2f2f;
+    }
+    header {
+      background-color: #ede0d4;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo img {
+      height: 60px;
+    }
+    nav {
+      font-family: 'Playfair Display', serif;
+    }
+    nav a {
+      color: #2f2f2f;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://cdn.allthepics.net/images/2025/07/28/IMG_0503.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #2f2f2f;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #3e3c24;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #4f4f4f;
+      margin: 10px auto 30px;
+      max-width: 600px;
+    }
+    .btn {
+      background-color: #6b8e23;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    section {
+      padding: 50px 20px;
+    }
+    section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      color: #3e3c24;
+      margin-bottom: 20px;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .image-grid img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .amenities, .about, .info {
+      max-width: 900px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #3e3c24;
+    }
+    .amenities ul {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .amenities li::before {
+      content: '✔';
+      color: #6b8e23;
+      margin-right: 8px;
+    }
+    footer {
+      background-color: #ede0d4;
+      padding: 30px;
+      text-align: center;
+      color: #3e3c24;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://cdn.allthepics.net/images/2025/07/28/Proxima-Nova-TSHIRTS.png" alt="Coco Homes Logo" />
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#exterior">Exterior</a>
+      <a href="#interior">Interior</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Coco Homes Katra</h1>
+    <p>Experience comfort, elegance, and peace near the sacred Vaishno Devi temple.</p>
+    <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Coco Homes</h2>
+    <p>Coco Homes offers a unique villa experience in the peaceful outskirts of Katra, near the Vaishno Devi shrine. A perfect blend of comfort and privacy, this luxury stay in Katra features premium amenities, including a sauna, steam bath, spa, bonfire, and private pool. Whether you're looking for an upscale hotel in Katra or an exclusive Air bnb, Coco Homes is the ideal choice for your next stay in Katra.</p>
+    <p>The hut features two beds, a spacious living room, and a bathroom equipped with steam and sauna baths. The open-area deck includes a private pool. Descend the stairs on the right side of the hut to find the in-ground firepit, Coco bar, and main kitchen. Enjoy a healthy meal under the open sky near the firepit. The upper lawn features a kitchen garden providing fresh in-house vegetables.</p>
+  </section>
+
+  <section id="amenities" class="amenities">
+    <h2>Luxury Amenities</h2>
+    <ul>
+      <li>Private Bonfire Area</li>
+      <li>Elegant Outdoor Pool</li>
+      <li>Steam Bath & Sauna</li>
+      <li>Complimentary High-Speed Wi-Fi</li>
+      <li>Personal Wake-Up Call Service</li>
+      <li>Flat Smart LED TV in Lobby Lounge</li>
+      <li>In-Room Tea & Coffee with Kettle</li>
+      <li>Air Conditioning & Heating</li>
+      <li>Daily Housekeeping Services</li>
+    </ul>
+  </section>
+
+  <section id="exterior" class="gallery">
+    <h2>Exterior Views</h2>
+    <div class="image-grid">
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_20240627_202642_938.png" alt="Exterior 1" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_0503.jpg" alt="Exterior 2" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/20250513_172242.jpg" alt="Exterior 3" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/20250509_195327.jpg" alt="Exterior 4" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG20250423193320.jpg" alt="Exterior 5" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/20250308_173248.jpg" alt="Exterior 6" />
+    </div>
+  </section>
+
+  <section id="interior" class="gallery">
+    <h2>Interior Views</h2>
+    <div class="image-grid">
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_0054.heic.jpg" alt="Interior 1" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_0035.HEIC.jpg" alt="Interior 2" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_0032.heic.jpg" alt="Interior 3" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_0029.heic.jpg" alt="Interior 4" />
+      <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_0068.heic.jpg" alt="Interior 5" />
+    </div>
+  </section>
+
+  <section class="info">
+    <h2>Additional Information</h2>
+    <p><strong>Check-in:</strong> 1:00 PM</p>
+    <p><strong>Check-out:</strong> 11:00 AM</p>
+    <p><strong>Distance from Katra Railway Station:</strong> 15 minutes</p>
+    <p><strong>Distance from Banganga:</strong> 20 minutes</p>
+    <p><strong>Distance from Jammu Airport:</strong> 45 minutes</p>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 +91 99061 75153</p>
+    <p>📧 katracocohomes@gmail.com</p>
+    <p>&copy; 2025 Coco Homes Katra. All rights reserved.</p>
+  </footer>
+</body>
+</html>
