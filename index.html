@@ -12,25 +12,68 @@
       background-color: #f8f5f0;
       color: #2f2f2f;
     }
+
     header {
-      background-color: #ede0d4;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  background-color: #0203c26;
+  display: flex;
+  align-items: stretch; /* Stretches children to full height */
+  justify-content: space-between;
+  height: 80px; /* Set a consistent height */
+  padding: 0;
+}
+
+    .logo {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.logo img {
+  height: 100%;       /* ✅ Stretches logo image to fill header */
+  width: auto;        /* ✅ Keeps logo's aspect ratio */
+  object-fit: cover;  /* ✅ Ensures full fill without distortion */
+  display: block;
+}
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
-    .logo img {
-      height: 60px;
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: 0.4s;
     }
+
     nav {
       font-family: 'Playfair Display', serif;
+      display: flex;
+      align-items: center;
     }
+
     nav a {
       color: #2f2f2f;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
+
+    nav.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: #ede0d4;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
     .hero {
       text-align: center;
       padding: 60px 20px;
@@ -39,17 +82,22 @@
       background-position: center;
       color: #2f2f2f;
     }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 48px;
       color: #3e3c24;
     }
+
     .hero p {
-      font-size: 18px;
-      color: #4f4f4f;
-      margin: 10px auto 30px;
-      max-width: 600px;
-    }
+  font-size: 19px;
+  color: rgba(48, 48, 48, 0.95); /* Slightly deeper */
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Subtle white shadow for readability */
+  margin: 10px auto 30px;
+  max-width: 600px;
+}
+
     .btn {
       background-color: #6b8e23;
       color: white;
@@ -59,15 +107,18 @@
       border-radius: 30px;
       text-decoration: none;
     }
+
     section {
       padding: 50px 20px;
     }
+
     section h2 {
       text-align: center;
       font-family: 'Playfair Display', serif;
       color: #3e3c24;
       margin-bottom: 20px;
     }
+
     .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -75,11 +126,14 @@
       max-width: 1200px;
       margin: auto;
     }
+
     .image-grid img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-    }
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
     .amenities, .about, .info {
       max-width: 900px;
       margin: auto;
@@ -87,6 +141,7 @@
       line-height: 1.6;
       color: #3e3c24;
     }
+
     .amenities ul {
       list-style: none;
       padding-left: 0;
@@ -94,28 +149,79 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;
     }
+
     .amenities li::before {
       content: '✔';
       color: #6b8e23;
       margin-right: 8px;
     }
+
     footer {
       background-color: #ede0d4;
       padding: 30px;
       text-align: center;
       color: #3e3c24;
     }
+
     footer p {
       margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero {
+        padding: 40px 10px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .amenities ul {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">
       <img src="https://cdn.allthepics.net/images/2025/07/28/Proxima-Nova-TSHIRTS.png" alt="Coco Homes Logo" />
     </div>
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mainNav">
       <a href="#about">About</a>
       <a href="#amenities">Amenities</a>
       <a href="#exterior">Exterior</a>
@@ -125,8 +231,8 @@
   </header>
 
   <section class="hero">
-    <h1>Welcome to Coco Homes Katra</h1>
-    <p>Experience comfort, elegance, and peace near the sacred Vaishno Devi temple.</p>
+    <h1>Welcome to <br/> Coco Homes Katra</h1>
+<p>Luxury Villa in Katra</p>
     <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
   </section>
 
@@ -135,8 +241,9 @@
     <p>Coco Homes offers a unique villa experience in the peaceful outskirts of Katra, near the Vaishno Devi shrine. A perfect blend of comfort and privacy, this luxury stay in Katra features premium amenities, including a sauna, steam bath, spa, bonfire, and private pool. Whether you're looking for an upscale hotel in Katra or an exclusive Airbnb, Coco Homes is the ideal choice for your next stay in Katra.</p>
     <p>The hut features two beds, a spacious living room, and a bathroom equipped with steam and sauna baths. The open-area deck includes a private pool. Descend the stairs on the right side of the hut to find the in-ground firepit, Coco bar, and main kitchen. Enjoy a healthy meal under the open sky near the firepit. The upper lawn features a kitchen garden providing fresh in-house vegetables.</p>
   </section>
+
   <div style="text-align: center; margin-top: 20px;">
-  <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
+    <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
   </div>
 
   <section id="amenities" class="amenities">
@@ -153,8 +260,9 @@
       <li>Daily Housekeeping Services</li>
     </ul>
   </section>
+
   <div style="text-align: center; margin-top: 20px;">
-  <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
+    <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
   </div>
 
   <section id="exterior" class="gallery">
@@ -168,8 +276,9 @@
       <img src="https://cdn.allthepics.net/images/2025/07/28/20250308_173248.jpg" alt="Exterior 6" />
     </div>
   </section>
+
   <div style="text-align: center; margin-top: 20px;">
-  <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
+    <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
   </div>
 
   <section id="interior" class="gallery">
@@ -182,8 +291,9 @@
       <img src="https://cdn.allthepics.net/images/2025/07/28/IMG_0068.heic.jpg" alt="Interior 5" />
     </div>
   </section>
+
   <div style="text-align: center; margin-top: 20px;">
-  <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
+    <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
   </div>
 
   <section class="info">
@@ -194,8 +304,9 @@
     <p><strong>Distance from Banganga:</strong> 20 minutes</p>
     <p><strong>Distance from Jammu Airport:</strong> 45 minutes</p>
   </section>
+
   <div style="text-align: center; margin-top: 20px;">
-  <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
+    <a class="btn" href="https://www.makemytrip.com/hotels/hotel-details/?checkin=date_7&checkout=date_8&city=abc&country=ab&roomStayQualifier=2e0e&hotelId=202403301552074501&locusId=abc&locusType=city&currency=INR&source=INGO" target="_blank">Book Now</a>
   </div>
 
   <footer id="contact">
@@ -204,5 +315,18 @@
     <p>📧 katracocohomes@gmail.com</p>
     <p>&copy; 2025 Coco Homes Katra. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
+
+
+
+
+
+
